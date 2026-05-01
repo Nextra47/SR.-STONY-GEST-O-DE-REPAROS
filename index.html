@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SR STONY® – Gestão de Reparos e Manutenção</title>
+  <title>SR STONY® | Gestão de Reparos e Manutenção</title>
   <meta name="description" content="Gestão técnica e execução de alto padrão para sua casa ou empresa. Elétrica, hidráulica, montagem corporativa e grandes instalações." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -12,13 +12,13 @@
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --navy:    #0d1b3e;
-      --navy-dk: #080f23;
-      --navy-lt: #162248;
-      --gold:    #c8a020;
-      --gold-lt: #e0b830;
+      --navy:    #0a0f23;
+      --navy-dk: #060b18;
+      --navy-lt: #0d1b3e;
+      --gold:    #3a9e5a;
+      --gold-lt: #4db86e;
       --white:   #ffffff;
-      --off:     #f0f2f7;
+      --off:     #f0f4ff;
       --mid:     #7a8aaa;
       --bdr:     rgba(255,255,255,.09);
       --bdr-lt:  rgba(13,27,62,.1);
@@ -80,7 +80,7 @@
     }
     .hero-bg {
       position: absolute; inset: 0;
-      background-image: url('https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=1600&q=80&fit=crop');
+      background-image: url('FOTOS/OBRA 1.jpg');
       background-size: cover; background-position: center;
       will-change: transform;
     }
@@ -166,13 +166,13 @@
       position: relative;
     }
     .svc-card:last-child { border-right: none; }
-    .svc-card:hover { box-shadow: 0 20px 60px rgba(13,27,62,.15); transform: translateY(-6px); z-index: 2; }
+    .svc-card:hover { box-shadow: 0 20px 60px rgba(13,27,62,.25); transform: translateY(-6px); z-index: 2; }
     .svc-img { height: 200px; overflow: hidden; }
     .svc-img img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s ease; display: block; }
     .svc-card:hover .svc-img img { transform: scale(1.07); }
     .svc-img-overlay {
       position: absolute; top: 0; left: 0; right: 0; height: 200px;
-      background: linear-gradient(to bottom, transparent 40%, rgba(13,27,62,.7) 100%);
+      background: linear-gradient(to bottom, transparent 40%, rgba(13,27,62,.8) 100%);
     }
     .svc-num-overlay {
       position: absolute; top: 12px; left: 16px;
@@ -184,14 +184,14 @@
     .svc-text { font-size: .85rem; color: var(--mid); line-height: 1.7; font-weight: 300; }
     .svc-list { list-style: none; margin-top: 16px; display: flex; flex-direction: column; gap: 7px; }
     .svc-list li { font-size: .8rem; color: var(--mid); display: flex; align-items: center; gap: 8px; }
-    .svc-list li::before { content: '—'; color: var(--gold); font-weight: 700; flex-shrink: 0; }
+    .svc-list li::before { content: '•'; color: var(--gold); font-weight: 700; flex-shrink: 0; }
     .svc-cta { display: inline-flex; align-items: center; gap: 6px; font-size: .78rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--gold); margin-top: 20px; text-decoration: none; border-bottom: 1px solid transparent; padding-bottom: 1px; transition: border-color .2s; }
     .svc-cta:hover { border-color: var(--gold); }
 
     /* ── STATS BAND ── */
     .stats-band {
       position: relative; padding: 72px 60px;
-      background: url('https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=1400&q=80&fit=crop') center/cover no-repeat;
+      background: url('FOTOS/OBRA.jpg') center/cover no-repeat;
     }
     .stats-band::after { content: ''; position: absolute; inset: 0; background: rgba(8,15,35,.88); }
     .stats-inner { max-width: 1240px; margin: 0 auto; position: relative; z-index: 1; display: grid; grid-template-columns: repeat(4,1fr); gap: 0; }
@@ -210,7 +210,7 @@
     .proc-step::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--bdr-lt); }
     .proc-fill { position: absolute; top: 0; left: 0; height: 3px; background: var(--gold); }
     .proc-img { width: 100%; height: 140px; object-fit: cover; border-radius: 2px; margin-bottom: 24px; display: block; }
-    .proc-idx { font-family: 'Barlow Condensed', sans-serif; font-size: 4rem; font-weight: 900; color: rgba(13,27,62,.06); line-height: 1; margin-bottom: 16px; }
+    .proc-idx { font-family: 'Barlow Condensed', sans-serif; font-size: 4rem; font-weight: 900; color: rgba(13,27,62,.08); line-height: 1; margin-bottom: 16px; }
     .proc-title { font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 1.05rem; text-transform: uppercase; letter-spacing: .06em; color: var(--navy); margin-bottom: 10px; }
     .proc-text { font-size: .85rem; color: var(--mid); line-height: 1.7; font-weight: 300; }
 
@@ -288,7 +288,7 @@
       cursor: default; transition: background .25s, transform .25s;
       text-align: center;
     }
-    .setor:hover { background: var(--navy); transform: translateY(-4px); z-index: 1; box-shadow: 0 12px 40px rgba(13,27,62,.2); }
+    .setor:hover { background: var(--navy); transform: translateY(-4px); z-index: 1; box-shadow: 0 12px 40px rgba(13,27,62,.3); }
     .setor-icon { width: 36px; height: 36px; margin: 0 auto 16px; }
     .setor-icon line, .setor-icon path, .setor-icon rect, .setor-icon circle, .setor-icon polyline { stroke: #aab; fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; transition: stroke .25s; }
     .setor:hover .setor-icon line,
@@ -474,7 +474,7 @@
 <!-- NAV -->
 <nav id="nav">
   <a href="#hero" class="nav-logo">
-    <img src="logo.png" alt="SR STONY" onerror="this.style.display='none'" />
+    <img src="logo.jpg" alt="SR STONY" onerror="this.style.display='none'" />
     <div class="nav-wordmark">SR STONY<sup style="font-size:.6em">®</sup>
       <small>Gestão de Reparos e Manutenção</small>
     </div>
@@ -501,7 +501,7 @@
       A Inteligência<br>que Resolve<br><em>sua Manutenção</em>
     </h1>
     <p class="hero-p reveal delay-2">
-      Execução de alto padrão para sua casa ou empresa — elétrica, hidráulica, montagem corporativa e grandes instalações, com organização e garantia de serviço.
+      Execução de alto padrão para sua casa ou empresa: elétrica, hidráulica, montagem corporativa e grandes instalações, com organização e garantia de serviço.
     </p>
     <div class="hero-btns reveal delay-3">
       <a href="#contato" class="btn-gold">Solicitar Orçamento</a>
@@ -516,10 +516,10 @@
   <div class="hero-right reveal-right delay-2">
     <div class="hero-card-stack">
       <div class="hero-card">
-        <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=600&q=80&fit=crop" alt="Serviço elétrico profissional" onerror="this.src='https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=600&q=80&fit=crop'" />
+        <img src="FOTOS/COLABORADOR FAZENDO ARMARIO.jpg" alt="Colaborador SR STONY em ação" />
       </div>
       <div class="hero-card2">
-        <img src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=400&q=80&fit=crop" alt="Serviço hidráulico" onerror="this.style.display='none'" />
+        <img src="FOTOS/INSTALAÇÃO DE CAIXA DE AGUA.jpg" alt="Instalação de caixa d'água" />
       </div>
       <div class="hero-card-badge"><div class="big">98%</div><div class="sm">Satisfação</div></div>
     </div>
@@ -546,7 +546,7 @@
     <div class="svc-grid">
       <div class="svc-card reveal delay-1">
         <div class="svc-img">
-          <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600&q=80&fit=crop" alt="Montagem corporativa" />
+          <img src="FOTOS/COLABORADOR FAZENDO ARMARIO.jpg" alt="Montagem corporativa" />
         </div>
         <div class="svc-img-overlay"></div>
         <div class="svc-num-overlay">01</div>
@@ -563,13 +563,13 @@
       </div>
       <div class="svc-card reveal delay-2">
         <div class="svc-img">
-          <img src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=600&q=80&fit=crop" alt="Serviço hidráulico" onerror="this.src='https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80&fit=crop'" />
+          <img src="FOTOS/INSTALAÇÃO DE CAIXA DE AGUA.jpg" alt="Instalação hidráulica" />
         </div>
         <div class="svc-img-overlay"></div>
         <div class="svc-num-overlay">02</div>
         <div class="svc-body">
           <div class="svc-title">Hidráulica</div>
-          <p class="svc-text">Diagnóstico preciso e reparo rápido de qualquer problema hidráulico — residencial ou comercial.</p>
+          <p class="svc-text">Diagnóstico preciso e reparo rápido de qualquer problema hidráulico, residencial ou comercial.</p>
           <ul class="svc-list">
             <li>Vazamentos e infiltrações</li>
             <li>Torneiras, registros e boias</li>
@@ -580,7 +580,7 @@
       </div>
       <div class="svc-card reveal delay-3">
         <div class="svc-img">
-          <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=600&q=80&fit=crop" alt="Serviço elétrico" />
+          <img src="FOTOS/PROJETO EM ANDAMENTO.jpg" alt="Projeto em andamento" />
         </div>
         <div class="svc-img-overlay"></div>
         <div class="svc-num-overlay">03</div>
@@ -597,7 +597,7 @@
       </div>
       <div class="svc-card reveal delay-4">
         <div class="svc-img">
-          <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&q=80&fit=crop" alt="Grandes instalações" />
+          <img src="FOTOS/OBRA 1.jpg" alt="Grande instalação" />
         </div>
         <div class="svc-img-overlay"></div>
         <div class="svc-num-overlay">04</div>
@@ -646,33 +646,33 @@
         <div class="label" style="margin-bottom:16px;">Processo</div>
         <h2 class="sec-h2">Do contato à<br><em>entrega garantida</em></h2>
       </div>
-      <p class="sec-sub reveal delay-2">Um processo simples, rápido e transparente — você acompanha tudo do início ao fim.</p>
+      <p class="sec-sub reveal delay-2">Um processo simples, rápido e transparente. Você acompanha tudo do início ao fim.</p>
     </div>
     <div class="proc-grid">
       <div class="proc-step reveal delay-1">
         <div class="proc-fill" style="width:25%"></div>
-        <img class="proc-img" src="https://images.unsplash.com/photo-1534536281715-e28d76689b4d?w=500&q=80&fit=crop" alt="Entre em contato" onerror="this.style.display='none'" />
+        <img class="proc-img" src="FOTOS/PROJETO EM ANDAMENTO.jpg" alt="Entre em contato" />
         <div class="proc-idx">01</div>
         <div class="proc-title">Entre em Contato</div>
         <p class="proc-text">Mande uma mensagem pelo WhatsApp ou preencha o formulário. Retornamos em minutos.</p>
       </div>
       <div class="proc-step reveal delay-2">
         <div class="proc-fill" style="width:50%"></div>
-        <img class="proc-img" src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=500&q=80&fit=crop" alt="Visita e orçamento" onerror="this.style.display='none'" />
+        <img class="proc-img" src="FOTOS/ARRUMANDO A PAREDE.jpg" alt="Visita e orçamento" />
         <div class="proc-idx">02</div>
         <div class="proc-title">Visita & Orçamento</div>
         <p class="proc-text">Nossa equipe visita o local e apresenta um orçamento claro, sem surpresas.</p>
       </div>
       <div class="proc-step reveal delay-3">
         <div class="proc-fill" style="width:75%"></div>
-        <img class="proc-img" src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=500&q=80&fit=crop" alt="Execução técnica" onerror="this.style.display='none'" />
+        <img class="proc-img" src="FOTOS/COLABORADOR FAZENDO CHAO.jpg" alt="Execução técnica" />
         <div class="proc-idx">03</div>
         <div class="proc-title">Execução Técnica</div>
         <p class="proc-text">Serviço executado por técnicos especializados, com pontualidade e organização.</p>
       </div>
       <div class="proc-step reveal delay-4">
         <div class="proc-fill" style="width:100%"></div>
-        <img class="proc-img" src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=500&q=80&fit=crop" alt="Entrega com garantia" onerror="this.style.display='none'" />
+        <img class="proc-img" src="FOTOS/PROJETO PRONTO.jpg" alt="Entrega com garantia" />
         <div class="proc-idx">04</div>
         <div class="proc-title">Entrega com Garantia</div>
         <p class="proc-text">Vistoria final, explicação do serviço e garantia por escrito. Você aprova antes de pagar.</p>
@@ -685,8 +685,8 @@
 <section id="porque">
   <div class="porque-inner">
     <div class="porque-imgs reveal-left">
-      <img class="porque-main" src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=700&q=80&fit=crop" alt="Equipe SR STONY em ação" onerror="this.src='https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=700&q=80&fit=crop'" />
-      <img class="porque-thumb" src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=300&q=80&fit=crop" alt="Serviço elétrico" onerror="this.style.display='none'" />
+      <img class="porque-main" src="FOTOS/PROJETO EM ANDAMENTO.jpg" alt="Equipe SR STONY em ação" />
+      <img class="porque-thumb" src="FOTOS/COLABORADOR FAZENDO CHAO.jpg" alt="Colaborador em ação" />
       <div class="porque-badge2">
         <div class="pb-num">15+</div>
         <div class="pb-txt">Anos de<br>experiência</div>
@@ -703,7 +703,7 @@
         </div>
         <div class="feat">
           <div class="feat-n">02</div>
-          <div><div class="feat-title">Organização e limpeza incluídas</div><p class="feat-text">Terminamos o serviço e deixamos o ambiente exatamente como estava — ou melhor.</p></div>
+          <div><div class="feat-title">Organização e limpeza incluídas</div><p class="feat-text">Terminamos o serviço e deixamos o ambiente exatamente como estava, ou melhor.</p></div>
         </div>
         <div class="feat">
           <div class="feat-n">03</div>
@@ -730,23 +730,23 @@
     </div>
     <div class="gal-grid" id="galGrid">
       <div class="gal-item reveal delay-1" onclick="openLb(0)">
-        <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=700&q=80&fit=crop" alt="Serviço elétrico" />
+        <img src="FOTOS/ARMARIO PRONTO.jpg" alt="Armário montado" />
         <div class="gal-overlay"><div class="gal-overlay-icon"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div></div>
       </div>
       <div class="gal-item reveal delay-2" onclick="openLb(1)">
-        <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&q=80&fit=crop" alt="Equipe de instalação" />
+        <img src="FOTOS/PROJETO PRONTO 1.jpg" alt="Projeto concluído" />
         <div class="gal-overlay"><div class="gal-overlay-icon"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div></div>
       </div>
       <div class="gal-item reveal delay-3" onclick="openLb(2)">
-        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&q=80&fit=crop" alt="Escritório montado" />
+        <img src="FOTOS/PROJETO PRONTO 2.jpg" alt="Projeto concluído 2" />
         <div class="gal-overlay"><div class="gal-overlay-icon"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div></div>
       </div>
       <div class="gal-item reveal delay-2" onclick="openLb(3)">
-        <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=600&q=80&fit=crop" alt="Manutenção em andamento" />
+        <img src="FOTOS/PIA MONTADA.jpg" alt="Pia montada" />
         <div class="gal-overlay"><div class="gal-overlay-icon"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div></div>
       </div>
       <div class="gal-item reveal delay-3" onclick="openLb(4)">
-        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80&fit=crop" alt="Serviço hidráulico" onerror="this.src='https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=600&q=80&fit=crop'" />
+        <img src="FOTOS/ARRUMANDO A PAREDE.jpg" alt="Arrumando a parede" />
         <div class="gal-overlay"><div class="gal-overlay-icon"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div></div>
       </div>
     </div>
@@ -761,7 +761,7 @@
         <div class="label" style="margin-bottom:16px;">Onde atuamos</div>
         <h2 class="sec-h2">Residências e<br><em>Empresas</em></h2>
       </div>
-      <p class="sec-sub reveal delay-2">Da sua casa ao seu negócio — a SR STONY® está pronta para atender com agilidade e qualidade em qualquer ambiente.</p>
+      <p class="sec-sub reveal delay-2">Da sua casa ao seu negócio, a SR STONY® está pronta para atender com agilidade e qualidade em qualquer ambiente.</p>
     </div>
     <div class="setores-grid">
       <div class="setor reveal delay-1">
@@ -831,7 +831,7 @@
         <p class="dep-text">Chamei o SR STONY para um vazamento que estava me dando dor de cabeça há semanas. Chegaram no horário, resolveram tudo em poucas horas e ainda deixaram o banheiro limpinho. Serviço impecável!</p>
         <div class="dep-author">
           <div class="dep-av">CR</div>
-          <div><div class="dep-name">Carlos Rodrigues</div><div class="dep-role">Cliente Residencial — São Paulo</div></div>
+          <div><div class="dep-name">Carlos Rodrigues</div><div class="dep-role">Cliente Residencial, São Paulo</div></div>
         </div>
       </div>
       <div class="dep-card reveal delay-2">
@@ -846,7 +846,7 @@
         <p class="dep-text">Contratamos a SR STONY para montar todo o mobiliário do nosso novo escritório. Equipe muito profissional, organizados e entregaram antes do prazo. Com certeza vou contratar de novo!</p>
         <div class="dep-author">
           <div class="dep-av">AM</div>
-          <div><div class="dep-name">Ana Melo</div><div class="dep-role">Proprietária — Escritório Comercial</div></div>
+          <div><div class="dep-name">Ana Melo</div><div class="dep-role">Proprietária, Escritório Comercial</div></div>
         </div>
       </div>
       <div class="dep-card reveal delay-3">
@@ -861,7 +861,7 @@
         <p class="dep-text">Tivemos um problema elétrico sério na loja e o SR STONY resolveu no mesmo dia. Orçamento transparente, sem surpresas na hora de pagar. Recomendo de olhos fechados!</p>
         <div class="dep-author">
           <div class="dep-av">FT</div>
-          <div><div class="dep-name">Fernando Torres</div><div class="dep-role">Lojista — Setor Comercial</div></div>
+          <div><div class="dep-name">Fernando Torres</div><div class="dep-role">Lojista, Setor Comercial</div></div>
         </div>
       </div>
     </div>
@@ -896,7 +896,7 @@
     <div class="ct-info reveal-left">
       <span class="label">Contato</span>
       <h2 class="ct-h2" style="margin-top:20px;">Fale com nossa<br>equipe técnica<br><em>agora</em></h2>
-      <p class="ct-lead">Estamos prontos para atender você — de segunda a domingo, incluindo fins de semana e feriados.</p>
+      <p class="ct-lead">Estamos prontos para atender você de segunda a domingo, incluindo fins de semana e feriados.</p>
       <div class="ct-items">
         <div class="ct-item">
           <div class="ct-icon"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.99 1.18 2 2 0 012.98 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg></div>
@@ -908,7 +908,7 @@
         </div>
         <div class="ct-item">
           <div class="ct-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
-          <div><div class="ct-lbl">Atendimento</div><div class="ct-val">Segunda a Domingo — 7h às 20h</div></div>
+          <div><div class="ct-lbl">Atendimento</div><div class="ct-val">Segunda a Domingo, 7h às 20h</div></div>
         </div>
       </div>
     </div>
@@ -947,10 +947,10 @@
   <div class="ft-top">
     <div>
       <a href="#hero" class="nav-logo" style="display:inline-flex;">
-        <img src="logo.png" alt="SR STONY" onerror="this.style.display='none'" style="height:38px;border-radius:50%;" />
+        <img src="logo.jpg" alt="SR STONY" onerror="this.style.display='none'" style="height:38px;border-radius:50%;" />
         <div class="nav-wordmark">SR STONY<sup style="font-size:.6em">®</sup><small>Gestão de Reparos e Manutenção</small></div>
       </a>
-      <p class="ft-desc">Gestão técnica e execução de alto padrão para sua casa ou empresa — com garantia e transparência em cada serviço.</p>
+      <p class="ft-desc">Gestão técnica e execução de alto padrão para sua casa ou empresa, com garantia e transparência em cada serviço.</p>
       <div class="ft-socials">
         <a href="#" class="ft-soc" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
         <a href="#" class="ft-soc" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
@@ -988,7 +988,7 @@
     </div>
   </div>
   <div class="ft-bottom">
-    <p>© 2024 <span class="reg">SR STONY®</span> — Gestão de Reparos e Manutenção. Todos os direitos reservados.</p>
+    <p>© 2024 <span class="reg">SR STONY®</span> | Gestão de Reparos e Manutenção. Todos os direitos reservados.</p>
     <p style="color:rgba(255,255,255,.1);">Qualidade que se vê. Resultado que se sente.</p>
   </div>
 </footer>
@@ -1064,11 +1064,11 @@
 
   /* ── Lightbox ── */
   const lbImages = [
-    'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=1200&q=90&fit=crop',
-    'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1200&q=90&fit=crop',
-    'https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&q=90&fit=crop',
-    'https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=1200&q=90&fit=crop',
-    'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&q=90&fit=crop',
+    'FOTOS/ARMARIO PRONTO.jpg',
+    'FOTOS/PROJETO PRONTO 1.jpg',
+    'FOTOS/PROJETO PRONTO 2.jpg',
+    'FOTOS/PIA MONTADA.jpg',
+    'FOTOS/ARRUMANDO A PAREDE.jpg',
   ];
   let lbCurrent = 0;
   const lb = document.getElementById('lightbox');
