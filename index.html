@@ -911,17 +911,17 @@
     </div>
     <form class="ct-form reveal-right" onsubmit="handleForm(event)">
       <div class="ct-row">
-        <div class="fg"><label>Nome</label><input type="text" placeholder="Seu nome completo" required /></div>
-        <div class="fg"><label>Empresa (opcional)</label><input type="text" placeholder="Nome da empresa" /></div>
+        <div class="fg"><label>Nome</label><input id="f-nome" type="text" placeholder="Seu nome completo" required /></div>
+        <div class="fg"><label>Empresa (opcional)</label><input id="f-empresa" type="text" placeholder="Nome da empresa" /></div>
       </div>
       <div class="ct-row">
-        <div class="fg"><label>WhatsApp</label><input type="tel" placeholder="(00) 00000-0000" required /></div>
-        <div class="fg"><label>E-mail</label><input type="email" placeholder="seu@email.com" required /></div>
+        <div class="fg"><label>WhatsApp</label><input id="f-tel" type="tel" placeholder="(00) 00000-0000" required /></div>
+        <div class="fg"><label>E-mail</label><input id="f-email" type="email" placeholder="seu@email.com" required /></div>
       </div>
-      <div class="fg"><label>Cidade</label><input type="text" placeholder="Sua cidade" required /></div>
+      <div class="fg"><label>Cidade</label><input id="f-cidade" type="text" placeholder="Sua cidade" required /></div>
       <div class="fg">
         <label>Serviço</label>
-        <select>
+        <select id="f-servico">
           <option value="">Selecione o serviço…</option>
           <option>Elétrica</option>
           <option>Hidráulica</option>
@@ -933,9 +933,9 @@
       </div>
       <div class="fg">
         <label>Mensagem</label>
-        <textarea placeholder="Descreva o serviço que você precisa…" required></textarea>
+        <textarea id="f-msg" placeholder="Descreva o serviço que você precisa…" required></textarea>
       </div>
-      <button type="submit" class="ct-submit">Enviar Mensagem →</button>
+      <button type="submit" class="ct-submit">Enviar Mensagem no WhatsApp →</button>
     </form>
   </div>
 </section>
@@ -1086,13 +1086,29 @@
     navLinks.forEach(l => { const active = l.getAttribute('href') === '#' + cur; l.style.color = active ? '#fff' : ''; });
   }, { passive: true });
 
-  /* ── Form submit ── */
+  /* ── Form submit → WhatsApp ── */
   function handleForm(e) {
     e.preventDefault();
-    const btn = e.target.querySelector('.ct-submit');
-    btn.textContent = '✓ Enviado! Entraremos em contato em breve.';
-    btn.style.background = '#16a34a'; btn.style.color = '#fff'; btn.disabled = true;
-    setTimeout(() => { btn.textContent = 'Enviar Mensagem →'; btn.style.background = ''; btn.style.color = ''; btn.disabled = false; e.target.reset(); }, 4500);
+    const nome    = document.getElementById('f-nome').value.trim();
+    const empresa = document.getElementById('f-empresa').value.trim();
+    const tel     = document.getElementById('f-tel').value.trim();
+    const email   = document.getElementById('f-email').value.trim();
+    const cidade  = document.getElementById('f-cidade').value.trim();
+    const servico = document.getElementById('f-servico').value.trim();
+    const msg     = document.getElementById('f-msg').value.trim();
+
+    let texto = `Olá SR. STONY! Vim pelo site e gostaria de um orçamento.\n\n`;
+    texto += `*Nome:* ${nome}\n`;
+    if (empresa) texto += `*Empresa:* ${empresa}\n`;
+    texto += `*WhatsApp:* ${tel}\n`;
+    texto += `*E-mail:* ${email}\n`;
+    texto += `*Cidade:* ${cidade}\n`;
+    if (servico) texto += `*Serviço:* ${servico}\n`;
+    if (msg) texto += `*Mensagem:* ${msg}\n`;
+
+    const url = `https://wa.me/5516999897134?text=${encodeURIComponent(texto)}`;
+    window.open(url, '_blank');
+    e.target.reset();
   }
 </script>
 </body>
