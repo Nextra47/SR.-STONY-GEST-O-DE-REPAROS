@@ -358,21 +358,21 @@
     .ct-lbl { font-size: .65rem; letter-spacing: .12em; text-transform: uppercase; color: rgba(255,255,255,.25); margin-bottom: 3px; }
     .ct-val { font-size: .92rem; color: #fff; font-weight: 500; }
     /* form */
-    .ct-form { display: flex; flex-direction: column; }
+    .ct-form { display: flex; flex-direction: column; background: #fff; border-radius: 4px; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,.3); }
     .ct-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
-    .fg { display: flex; flex-direction: column; border: 1px solid var(--bdr); margin: -1px 0 0 -1px; }
-    .fg label { font-size: .65rem; letter-spacing: .12em; text-transform: uppercase; color: rgba(255,255,255,.28); padding: 14px 18px 0; }
+    .fg { display: flex; flex-direction: column; border: 1px solid #e2e8f0; margin: -1px 0 0 -1px; background: #fff; }
+    .fg label { font-size: .65rem; letter-spacing: .12em; text-transform: uppercase; color: #94a3b8; padding: 14px 18px 0; }
     .fg input, .fg textarea, .fg select {
       background: transparent; border: none; outline: none;
-      padding: 6px 18px 14px; font-size: .92rem; color: #fff;
-      font-family: 'Barlow', sans-serif; font-weight: 300;
+      padding: 6px 18px 14px; font-size: .92rem; color: #1e293b;
+      font-family: 'Barlow', sans-serif; font-weight: 400;
       appearance: none; -webkit-appearance: none;
     }
-    .fg select option { background: var(--navy-dk); }
+    .fg select option { background: #fff; color: #1e293b; }
     .fg textarea { min-height: 100px; resize: vertical; }
-    .fg input::placeholder, .fg textarea::placeholder { color: rgba(255,255,255,.18); }
+    .fg input::placeholder, .fg textarea::placeholder { color: #cbd5e1; }
     .fg:focus-within { border-color: var(--gold); }
-    .ct-submit { background: var(--gold); border: none; cursor: pointer; padding: 17px; font-family: 'Barlow', sans-serif; font-size: .8rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--navy); transition: background .2s; width: 100%; margin-top: -1px; border: 1px solid var(--bdr); border-top: none; }
+    .ct-submit { background: var(--gold); border: none; cursor: pointer; padding: 17px; font-family: 'Barlow', sans-serif; font-size: .8rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: #fff; transition: background .2s; width: 100%; margin-top: -1px; }
     .ct-submit:hover { background: var(--gold-lt); }
 
     /* ── PARCEIROS ── */
@@ -929,7 +929,10 @@
         <div class="fg"><label>WhatsApp</label><input id="f-tel" type="tel" placeholder="(00) 00000-0000" required /></div>
         <div class="fg"><label>E-mail</label><input id="f-email" type="email" placeholder="seu@email.com" required /></div>
       </div>
-      <div class="fg"><label>Cidade</label><input id="f-cidade" type="text" placeholder="Sua cidade" required /></div>
+      <div class="ct-row">
+        <div class="fg"><label>Cidade</label><input id="f-cidade" type="text" placeholder="Sua cidade" required /></div>
+        <div class="fg"><label>Endereço</label><input id="f-endereco" type="text" placeholder="Rua, número, bairro" /></div>
+      </div>
       <div class="fg">
         <label>Serviço</label>
         <select id="f-servico">
@@ -1104,7 +1107,8 @@
     const empresa = document.getElementById('f-empresa').value.trim();
     const tel     = document.getElementById('f-tel').value.trim();
     const email   = document.getElementById('f-email').value.trim();
-    const cidade  = document.getElementById('f-cidade').value.trim();
+    const cidade   = document.getElementById('f-cidade').value.trim();
+    const endereco = document.getElementById('f-endereco').value.trim();
     const servico = document.getElementById('f-servico').value.trim();
     const msg     = document.getElementById('f-msg').value.trim();
 
@@ -1114,6 +1118,7 @@
     texto += `*WhatsApp:* ${tel}\n`;
     texto += `*E-mail:* ${email}\n`;
     texto += `*Cidade:* ${cidade}\n`;
+    if (endereco) texto += `*Endereço:* ${endereco}\n`;
     if (servico) texto += `*Serviço:* ${servico}\n`;
     if (msg) texto += `*Mensagem:* ${msg}\n`;
 
