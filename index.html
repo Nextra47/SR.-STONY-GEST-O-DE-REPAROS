@@ -358,10 +358,10 @@
     .ct-lbl { font-size: .65rem; letter-spacing: .12em; text-transform: uppercase; color: rgba(255,255,255,.25); margin-bottom: 3px; }
     .ct-val { font-size: .92rem; color: #fff; font-weight: 500; }
     /* form */
-    .ct-form { display: flex; flex-direction: column; background: #fff; border-radius: 4px; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,.3); }
+    .ct-form { display: flex; flex-direction: column; background: #fff; border-radius: 6px; overflow: hidden; box-shadow: 0 32px 80px rgba(0,0,0,.45), 0 0 0 3px var(--gold); }
     .ct-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
-    .fg { display: flex; flex-direction: column; border: 1px solid #e2e8f0; margin: -1px 0 0 -1px; background: #fff; }
-    .fg label { font-size: .65rem; letter-spacing: .12em; text-transform: uppercase; color: #94a3b8; padding: 14px 18px 0; }
+    .fg { display: flex; flex-direction: column; border: 1px solid #d1d5db; margin: -1px 0 0 -1px; background: #fff; }
+    .fg label { font-size: .65rem; letter-spacing: .12em; text-transform: uppercase; color: #64748b; padding: 14px 18px 0; font-weight: 600; }
     .fg input, .fg textarea, .fg select {
       background: transparent; border: none; outline: none;
       padding: 6px 18px 14px; font-size: .92rem; color: #1e293b;
@@ -370,8 +370,8 @@
     }
     .fg select option { background: #fff; color: #1e293b; }
     .fg textarea { min-height: 100px; resize: vertical; }
-    .fg input::placeholder, .fg textarea::placeholder { color: #cbd5e1; }
-    .fg:focus-within { border-color: var(--gold); }
+    .fg input::placeholder, .fg textarea::placeholder { color: #94a3b8; }
+    .fg:focus-within { border-color: var(--gold); background: #f0faf4; }
     .ct-submit { background: var(--gold); border: none; cursor: pointer; padding: 17px; font-family: 'Barlow', sans-serif; font-size: .8rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: #fff; transition: background .2s; width: 100%; margin-top: -1px; }
     .ct-submit:hover { background: var(--gold-lt); }
 
