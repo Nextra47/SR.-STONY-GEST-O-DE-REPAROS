@@ -938,7 +938,7 @@
         <select id="f-filial" required>
           <option value="">Selecione a filial…</option>
           <option value="1">Filial 1 – Franca SP</option>
-          <option value="2">Filial 2 – [Cidade 2]</option>
+          <option value="2">Filial 2 – Osasco SP</option>
         </select>
       </div>
       <div class="fg">
@@ -1124,10 +1124,10 @@
     // Números por filial — substituir 55XXXXXXXXXXX pelo número real da Filial 2
     const whatsFilial = {
       '1': '5516999897134',
-      '2': '55XXXXXXXXXXX',
+      '2': '5511914248203',
     };
     const numero     = whatsFilial[filial] || whatsFilial['1'];
-    const filialNome = filial === '2' ? 'Filial 2' : 'Filial 1 – Franca SP';
+    const filialNome = filial === '2' ? 'Filial 2 – Osasco SP' : 'Filial 1 – Franca SP';
 
     let texto = `Olá SR. STONY! Vim pelo site e gostaria de um orçamento.\n\n`;
     texto += `*Filial:* ${filialNome}\n`;
