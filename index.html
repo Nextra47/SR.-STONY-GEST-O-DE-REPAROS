@@ -934,6 +934,14 @@
         <div class="fg"><label>Endereço</label><input id="f-endereco" type="text" placeholder="Rua, número, bairro" /></div>
       </div>
       <div class="fg">
+        <label>Filial / Unidade de Atendimento</label>
+        <select id="f-filial" required>
+          <option value="">Selecione a filial…</option>
+          <option value="1">Filial 1 – Franca SP</option>
+          <option value="2">Filial 2 – [Cidade 2]</option>
+        </select>
+      </div>
+      <div class="fg">
         <label>Serviço</label>
         <select id="f-servico">
           <option value="">Selecione o serviço…</option>
@@ -1103,16 +1111,26 @@
   /* ── Form submit → WhatsApp ── */
   function handleForm(e) {
     e.preventDefault();
-    const nome    = document.getElementById('f-nome').value.trim();
-    const empresa = document.getElementById('f-empresa').value.trim();
-    const tel     = document.getElementById('f-tel').value.trim();
-    const email   = document.getElementById('f-email').value.trim();
+    const nome     = document.getElementById('f-nome').value.trim();
+    const empresa  = document.getElementById('f-empresa').value.trim();
+    const tel      = document.getElementById('f-tel').value.trim();
+    const email    = document.getElementById('f-email').value.trim();
     const cidade   = document.getElementById('f-cidade').value.trim();
     const endereco = document.getElementById('f-endereco').value.trim();
-    const servico = document.getElementById('f-servico').value.trim();
-    const msg     = document.getElementById('f-msg').value.trim();
+    const filial   = document.getElementById('f-filial').value;
+    const servico  = document.getElementById('f-servico').value.trim();
+    const msg      = document.getElementById('f-msg').value.trim();
+
+    // Números por filial — substituir 55XXXXXXXXXXX pelo número real da Filial 2
+    const whatsFilial = {
+      '1': '5516999897134',
+      '2': '55XXXXXXXXXXX',
+    };
+    const numero     = whatsFilial[filial] || whatsFilial['1'];
+    const filialNome = filial === '2' ? 'Filial 2' : 'Filial 1 – Franca SP';
 
     let texto = `Olá SR. STONY! Vim pelo site e gostaria de um orçamento.\n\n`;
+    texto += `*Filial:* ${filialNome}\n`;
     texto += `*Nome:* ${nome}\n`;
     if (empresa) texto += `*Empresa:* ${empresa}\n`;
     texto += `*WhatsApp:* ${tel}\n`;
@@ -1122,7 +1140,7 @@
     if (servico) texto += `*Serviço:* ${servico}\n`;
     if (msg) texto += `*Mensagem:* ${msg}\n`;
 
-    const url = `https://wa.me/5516999897134?text=${encodeURIComponent(texto)}`;
+    const url = `https://wa.me/${numero}?text=${encodeURIComponent(texto)}`;
     window.open(url, '_blank');
     e.target.reset();
   }
