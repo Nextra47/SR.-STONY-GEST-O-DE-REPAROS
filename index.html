@@ -1112,12 +1112,11 @@
     navLinks.forEach(l => { const active = l.getAttribute('href') === '#' + cur; l.style.color = active ? '#fff' : ''; });
   }, { passive: true });
 
-  /* ── Contador de orçamentos ── */
+  /* ── Contador de orçamentos (localStorage) ── */
   const countEl = document.getElementById('orcamento-count');
-  fetch('https://api.countapi.xyz/get/srstony-franca/orcamentos')
-    .then(r => r.json())
-    .then(d => { if (countEl) countEl.textContent = (d.value || 0) + 47; })
-    .catch(() => { if (countEl) countEl.textContent = '47'; });
+  const BASE = 47;
+  const extra = parseInt(localStorage.getItem('srstony-orcamentos') || '0');
+  if (countEl) countEl.textContent = BASE + extra;
 
   /* ── Form submit → WhatsApp ── */
   function handleForm(e) {
@@ -1154,10 +1153,9 @@
     const url = `https://wa.me/${numero}?text=${encodeURIComponent(texto)}`;
     window.open(url, '_blank');
     e.target.reset();
-    fetch('https://api.countapi.xyz/hit/srstony-franca/orcamentos')
-      .then(r => r.json())
-      .then(d => { if (countEl) countEl.textContent = (d.value || 0) + 47; })
-      .catch(() => {});
+    const novoExtra = parseInt(localStorage.getItem('srstony-orcamentos') || '0') + 1;
+    localStorage.setItem('srstony-orcamentos', novoExtra);
+    if (countEl) countEl.textContent = BASE + novoExtra;
   }
 </script>
 </body>
