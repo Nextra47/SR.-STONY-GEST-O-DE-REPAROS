@@ -374,6 +374,7 @@
     .fg:focus-within { border-color: var(--gold); background: #f0faf4; }
     .ct-submit { background: var(--gold); border: none; cursor: pointer; padding: 17px; font-family: 'Barlow', sans-serif; font-size: .8rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: #fff; transition: background .2s; width: 100%; margin-top: -1px; }
     .ct-submit:hover { background: var(--gold-lt); }
+    .ct-counter { background: #f0faf4; border: 1px solid #d1fae5; color: #065f46; font-size: .82rem; font-weight: 600; padding: 10px 18px; text-align: center; border-left: none; border-right: none; }
 
     /* ── PARCEIROS ── */
     #parceiros { background: var(--navy-dk); padding: 64px 60px; border-top: 1px solid var(--bdr); }
@@ -957,6 +958,9 @@
         <label>Mensagem</label>
         <textarea id="f-msg" placeholder="Descreva o serviço que você precisa…" required></textarea>
       </div>
+      <div class="ct-counter">
+        🔥 <span id="orcamento-count">...</span> pessoas já solicitaram orçamento
+      </div>
       <button type="submit" class="ct-submit">Enviar Mensagem no WhatsApp →</button>
     </form>
   </div>
@@ -1108,6 +1112,13 @@
     navLinks.forEach(l => { const active = l.getAttribute('href') === '#' + cur; l.style.color = active ? '#fff' : ''; });
   }, { passive: true });
 
+  /* ── Contador de orçamentos ── */
+  const countEl = document.getElementById('orcamento-count');
+  fetch('https://api.countapi.xyz/get/srstony-franca/orcamentos')
+    .then(r => r.json())
+    .then(d => { if (countEl) countEl.textContent = (d.value || 0) + 47; })
+    .catch(() => { if (countEl) countEl.textContent = '47'; });
+
   /* ── Form submit → WhatsApp ── */
   function handleForm(e) {
     e.preventDefault();
@@ -1143,6 +1154,10 @@
     const url = `https://wa.me/${numero}?text=${encodeURIComponent(texto)}`;
     window.open(url, '_blank');
     e.target.reset();
+    fetch('https://api.countapi.xyz/hit/srstony-franca/orcamentos')
+      .then(r => r.json())
+      .then(d => { if (countEl) countEl.textContent = (d.value || 0) + 47; })
+      .catch(() => {});
   }
 </script>
 </body>
