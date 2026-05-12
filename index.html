@@ -954,7 +954,6 @@
         <select id="f-filial" required>
           <option value="">Selecione a filial…</option>
           <option value="1">Filial 1 – Franca SP</option>
-          <option value="2">Filial 2 – Osasco SP</option>
         </select>
       </div>
       <div class="fg">
@@ -1140,7 +1139,7 @@
   /* ── Social Proof Toast ── */
   const spToast = document.getElementById('spToast');
   const spNomes = ['Carlos','Ana Paula','Roberto','Fernanda','Diego','Mariana','Lucas','Patrícia','Rafael','Juliana','Marcos','Camila'];
-  const spCidades = ['Franca','Osasco','Ribeirão Preto','São Paulo','Batatais','Sertãozinho','Orlândia','Franca','Franca','Osasco'];
+  const spCidades = ['Franca','Ribeirão Preto','São Paulo','Batatais','Sertãozinho','Orlândia','Franca','Franca','Franca'];
   const spServicos = ['elétrica','hidráulica','montagem de móveis','instalação elétrica','reparo hidráulico','grandes instalações'];
   const spTempos = ['agora mesmo','há 3 minutos','há 7 minutos','há 12 minutos','há poucos instantes'];
 
@@ -1178,13 +1177,11 @@
     const servico  = document.getElementById('f-servico').value.trim();
     const msg      = document.getElementById('f-msg').value.trim();
 
-    // Números por filial — substituir 55XXXXXXXXXXX pelo número real da Filial 2
     const whatsFilial = {
       '1': '5516999897134',
-      '2': '5511914248203',
     };
     const numero     = whatsFilial[filial] || whatsFilial['1'];
-    const filialNome = filial === '2' ? 'Filial 2 – Osasco SP' : 'Filial 1 – Franca SP';
+    const filialNome = 'Filial 1 – Franca SP';
 
     let texto = `Olá SR. STONY! Vim pelo site e gostaria de um orçamento.\n\n`;
     texto += `*Filial:* ${filialNome}\n`;
